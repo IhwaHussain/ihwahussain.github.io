@@ -1,3 +1,10 @@
+:root{
+    --headerfooterbg:  hsl(291, 71%, 18%);
+    --headerfooterfont: hsl(180, 100%, 50%);
+    --sitebg:  hsl(182, 27%, 72%);
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,20 +16,29 @@ html{
 }
 
 body {
-    background-color: rgb(165, 202, 203);
+    background-color: var(--sitebg);
 }
 
 .container{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
 header{
+    margin: 0;
     padding: 0px;
+    text-align: left;
+    background-color: var(--headerfooterbg);
+    color: var(--headerfooterfont);
+}
+
+footer{
+    margin: 0;
+    padding: 0;
     text-align: center;
-    background-color: rgb(67, 13, 78);
-    color:black;
+    background-color: var(--headerfooterbg);
+    color: var(--headerfooterfont);
 }
 
 
@@ -32,32 +48,92 @@ nav{
 }
 
 .topnav{
-    background-color: rgb(67, 13, 78);
+    background-color: var(--headerfooterbg);
     list-style-type: none;
     width: 100%;
-    /*display: flex;*/
     margin: 0px;
     padding: 0px;
+    position: absolute;
 }
 
 .topnav li{
+    list-style: none;
     display: inline-block;
 }
 
-.topnav li a {
+.topnav li a{
     float: left;
     display: block;
-    color:aqua;
+    color:var(--headerfooterfont);
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
     text-decoration: none;
+    position: relative;
 }
+
+.topnav li > a::after { content: ' \25BC';}
+
+li > a:only-child:after { content: ''; }
+
+.topnav li a:hover{
+    background-color: #950606;
+}
+
+.topnav li ul{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    float: left;
+    position: absolute;
+    /*padding-left: 0;*/
+    left: 0;
+    /*display: none;*/
+    background-color: rgb(67, 13, 78);
+    top: 100%;
+    z-index: 1;
+}
+
+.topnav li ul li{
+    width: 100%;
+}
+
+.topnav li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+    /*display: block;*/
+}
+
+/*.topnav li:hover > ul,
+ul li ul:hover{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    min-width: 250px;
+    text-align: left;
+    padding-top: 20px;
+    box-shadow: 0px 3px 5px -1px #ccc;
+}
+
+.topnav li ul li{
+    clear: both;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    border-style: none;
+}
+
+.topnav li ul li a:hover{
+    padding-left: 10px;
+    transition: all 0.3 ease;
+}*/
 
 .content {
     padding: 10px 0;
 }
 
 .content h1{
+    padding-top: 40px;
     text-align: center;
 }
 
