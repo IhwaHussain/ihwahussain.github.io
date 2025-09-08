@@ -69,6 +69,7 @@ nav{
     padding: 10px 30px;
     text-decoration: none;
     position: relative;
+    z-index: 1;
 }
 
 .topnav li > a::after { content: ' \25BC';}
@@ -90,7 +91,7 @@ li > a:only-child:after { content: ''; }
     /*display: none;*/
     background-color: rgb(67, 13, 78);
     top: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .topnav li ul li{
